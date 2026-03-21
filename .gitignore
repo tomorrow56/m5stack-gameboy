@@ -1,0 +1,22 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# PlatformIO IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# ROM / セーブデータ (著作権・個人データのため除外)
+*.gb
+*.gbc
+*.sav
+
+# ビルド成果物
+build/
