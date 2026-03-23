@@ -71,7 +71,7 @@ void displayPushFrame() {
       const uint8_t *gbLine  = pixelBuf[rowLUT[r]];
       uint16_t      *lcdLine = frameBuf + r * LCD_W;
       for (int c = 0; c < LCD_W; c++) {
-        lcdLine[c] = pal[gbLine[c >> 1] & 0x03];
+        lcdLine[c] = pal[gbLine[(c * GB_W) / LCD_W] & 0x03];
       }
     }
     M5.Lcd.pushImage(0, 0, LCD_W, GB_DISPLAY_H, frameBuf);
@@ -82,7 +82,7 @@ void displayPushFrame() {
     for (int r = 0; r < GB_DISPLAY_H; r++) {
       const uint8_t *gbLine = pixelBuf[rowLUT[r]];
       for (int c = 0; c < LCD_W; c++) {
-        rowBuf[c] = pal[gbLine[c >> 1] & 0x03];
+        rowBuf[c] = pal[gbLine[(c * GB_W) / LCD_W] & 0x03];
       }
       M5.Lcd.setAddrWindow(0, r, LCD_W, 1);
       M5.Lcd.pushColors(rowBuf, LCD_W, true);
