@@ -68,7 +68,11 @@ uint8_t *storageLoadROM(const char *path, size_t *size) {
 
 void storageFreeROM() {
   if (romBuffer) {
+#ifdef BOARD_HAS_PSRAM
+    ps_free(romBuffer);
+#else
     free(romBuffer);
+#endif
     romBuffer = nullptr;
   }
 }
