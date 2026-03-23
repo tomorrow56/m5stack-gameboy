@@ -1,3 +1,4 @@
+#include "config.h"
 #include "storage.h"
 #include <Arduino.h>
 #include <SD.h>

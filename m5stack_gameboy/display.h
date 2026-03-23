@@ -1,4 +1,5 @@
 #pragma once
+#include "config.h"
 #include <stdint.h>
 
 #define GB_W  160

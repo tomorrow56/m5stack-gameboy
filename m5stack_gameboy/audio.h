@@ -1,9 +1,6 @@
 #pragma once
+#include "config.h"
 #include <stdint.h>
-
-#ifndef ENABLE_SOUND
-#  define ENABLE_SOUND 0
-#endif
 
 /**
  * @brief オーディオモジュールを初期化する
